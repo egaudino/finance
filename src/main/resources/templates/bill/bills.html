@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Finance Web App</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <li><a href="#" th:href="@{/bill/new}">Add</a></li>
+    <div th:if="${not #lists.isEmpty(bills)}">
+        <h2>List of Bills</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Value</th>
+                <th>Due Date</th>
+                <th>Payment Date</th>
+                <th>Paid</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="bill : ${bills}">
+                <td th:text="${bill.id}"><a href="/bill/${bill.id}">Id</a></td>
+                <td th:text="${bill.description}">description</td>
+                <td th:text="${bill.value}">value</td>
+                <td th:text="${bill.dueDate}">dueDate</td>
+                <td th:text="${bill.paymentDate}">paymentDate</td>
+                <td th:text="${bill.paid}">paid</td>
+
+
+                <td><a th:href="${'/bill/' + bill.id}">View</a></td>
+                <td><a th:href="${'/bill/edit/' + bill.id}">Edit</a></td>
+                <td><a th:href="${'/bill/delete/' + bill.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

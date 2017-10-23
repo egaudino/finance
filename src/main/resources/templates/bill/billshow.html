@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Finance WebApp</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Bill</h2>
+    <div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Bill Id:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${bill.id}">Bill Id</p></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Description:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${bill.description}">description</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Value:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${bill.value}">Value</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Due Date:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${bill.dueDate}">Due Date</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Payment Date:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${bill.paymentDate}">Payment Date</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Paid:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${bill.paid}">Paid</p>
+                </div>
+            </div>
+
+
+
+        </form>
+        <a href="#" th:href="@{/bills/}">Back</a>
+    </div>
+</div>
+
+</body>
+</html>
